@@ -16,6 +16,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="AddCreator" element={<AddCreator />}/>
+        <Route path="ShowCreators" element={<ShowCreators />} />
       </Routes>
       </BrowserRouter>
     </div>

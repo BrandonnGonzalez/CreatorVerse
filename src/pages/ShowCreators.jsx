@@ -37,6 +37,7 @@ function ShowCreators() {
         <div>
             <div className="read-posts-container">
             <h1 className="read-posts-title">Lifting Forum</h1>
+            {!creators && <h2>Currently there are no creators!</h2>}
             <div className="posts-grid">
                 {creators && creators.map((creator) => (
                     <div key={creator.id} className="post-card">
