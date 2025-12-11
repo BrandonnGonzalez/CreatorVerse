@@ -37,6 +37,19 @@ function ShowCreators() {
         navigate(`/EditCreator/${creatorId}`);
     };
 
+    const deleteCreator = async (id) => {
+        await supabase
+            .from('creators')
+            .delete()
+            .eq('id', id);
+    
+        // Updates UI by filtering out deleted creator
+        setCreators(prev => prev.filter(c => c.id !== id));
+    
+        navigate('/');
+    };    
+
+
     return (
         <div>
             <div className="read-posts-container">
@@ -50,8 +63,8 @@ function ShowCreators() {
                             
                                 ✏️
                             </button>
-                            <button>
-                            
+                            <button onClick={() => deleteCreator(creator.id)}>
+
                                 ✕
                             </button>
                         </div>
