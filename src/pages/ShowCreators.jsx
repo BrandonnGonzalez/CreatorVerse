@@ -33,6 +33,10 @@ function ShowCreators() {
         fetchCreators();
     }, []);
 
+    const handleEdit = (creatorId) => {
+        navigate(`/EditCreator/${creatorId}`);
+    };
+
     return (
         <div>
             <div className="read-posts-container">
@@ -42,7 +46,7 @@ function ShowCreators() {
                 {creators && creators.map((creator) => (
                     <div key={creator.id} className="post-card" style={{backgroundImage: `url(${creator.imageUrl})`,}}>
                         <div className="post-actions">
-                            <button>
+                            <button onClick={() => handleEdit(creator.id)}>
                             
                                 ✏️
                             </button>

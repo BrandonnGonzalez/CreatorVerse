@@ -18,6 +18,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="AddCreator" element={<AddCreator />}/>
         <Route path="ShowCreators" element={<ShowCreators />} />
+        <Route path="/EditCreator/:id" element={<EditCreator />} />
       </Routes>
       </BrowserRouter>
     </div>
