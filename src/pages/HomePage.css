@@ -1,0 +1,73 @@
+/* Full-screen background wrapper */
+.homepage-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+/* Main content container */
+.homepage-container {
+    max-width: 800px;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Title styling (same gradient purple text as ShowCreators) */
+.homepage-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.homepage-description {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 3rem;
+}
+
+/* Button layout */
+.homepage-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Base button styles */
+.homepage-button {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+    color: white;
+    font-weight: 600;
+}
+
+/* Add Creator button */
+.homepage-button.add {
+    background: #48bb78;
+}
+
+.homepage-button.add:hover {
+    background: #38a169;
+    transform: translateY(-4px);
+}
+
+/* View Creators button */
+.homepage-button.show {
+    background: #4299e1;
+}
+
+.homepage-button.show:hover {
+    background: #3182ce;
+    transform: translateY(-4px);
+}

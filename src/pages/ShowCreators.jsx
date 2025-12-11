@@ -36,11 +36,11 @@ function ShowCreators() {
     return (
         <div>
             <div className="read-posts-container">
-            <h1 className="read-posts-title">Lifting Forum</h1>
+            <h1 className="read-posts-title">CreatorVerse</h1>
             {!creators && <h2>Currently there are no creators!</h2>}
             <div className="posts-grid">
                 {creators && creators.map((creator) => (
-                    <div key={creator.id} className="post-card">
+                    <div key={creator.id} className="post-card" style={{backgroundImage: `url(${creator.imageUrl})`,}}>
                         <div className="post-actions">
                             <button>
                             
@@ -60,7 +60,7 @@ function ShowCreators() {
                             <strong style={{ color: '#667eea' }}>Url:</strong> {creator.url}
                         </p>
                         <p className="post-detail">
-                            <strong style={{ color: '#667eea' }}>Description::</strong> {creator.description}
+                            <strong style={{ color: '#667eea' }}>Description:</strong> {creator.description}
                         </p>
                         <p className="post-detail">
                             <strong style={{ color: '#667eea' }}>Image Url:</strong> {creator.imageUrl}
