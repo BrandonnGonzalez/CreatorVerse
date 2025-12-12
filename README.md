@@ -35,7 +35,7 @@ Here's a walkthrough of implemented required features:
 👉🏿 <a href="https://www.loom.com/share/a4468aba1f144794bad641eeaa66a4b2">Prework Recording</a>
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  👉🏿 Loom
+Recoridng created with 👉🏿 Loom
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
