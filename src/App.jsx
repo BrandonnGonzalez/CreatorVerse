@@ -9,6 +9,7 @@ import EditCreator from './pages/EditCreator'
 import ShowCreators from './pages/ShowCreators'
 import HomePage from './pages/HomePage'
 import NavBar from './pages/NavBar'
+import DetailsPage from './pages/DetailsPage'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="AddCreator" element={<AddCreator />}/>
         <Route path="ShowCreators" element={<ShowCreators />} />
         <Route path="/EditCreator/:id" element={<EditCreator />} />
+        <Route path="/DetailsPage/:id" element={<DetailsPage />} />
       </Routes>
       </BrowserRouter>
     </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../client';   
-import './ShowCreators.css'
+import './ShowCreators.css';
 import { IconCamera } from '@tabler/icons-react';
 
 function ShowCreators() {
@@ -15,17 +15,7 @@ function ShowCreators() {
                 .select()
                 .order('created_at', { ascending: true });
 
-            // 🔍 LOG THE DATA TO CONSOLE
-            console.log('=== FULL API RESPONSE ===');
-            console.log('Data Array:', data);
-            console.log('Number of posts:', data?.length);
-
-            // Show the structure of the first item
-            if (data && data.length > 0) {
-                console.log('=== FIRST POST STRUCTURE ===');
-                console.log(data[0]);
-                console.log('Available fields:', Object.keys(data[0]));
-            }
+            console.log('=== FULL API RESPONSE ===', data);
 
             setCreators(data);
         };
@@ -42,50 +32,59 @@ function ShowCreators() {
             .from('creators')
             .delete()
             .eq('id', id);
-    
-        // Updates UI by filtering out deleted creator
-        setCreators(prev => prev.filter(c => c.id !== id));
-    
-        navigate('/');
-    };    
 
+        setCreators(prev => prev.filter(c => c.id !== id));
+        navigate('/');
+    };
+
+    const handleDetailedView = (creatorId) => {
+        navigate(`/DetailsPage/${creatorId}`);
+    };
 
     return (
-        <div>
+        <div className="creators-background">
+
             <div className="read-posts-container">
-            <h1 className="read-posts-title">CreatorVerse</h1>
-            {!creators && <h2>Currently there are no creators!</h2>}
-            <div className="posts-grid">
-                {creators && creators.map((creator) => (
-                    <div key={creator.id} className="post-card" style={{backgroundImage: `url(${creator.imageUrl})`,}}>
-                        <div className="post-actions">
-                            <button onClick={() => handleEdit(creator.id)}>
+                <h1 className="read-posts-title">CreatorVerse</h1>
+
+                {!creators && <h2>Currently there are no creators!</h2>}
+
+                <div className="posts-grid">
+                    {creators && creators.map((creator) => (
+                        <div 
+                            key={creator.id} 
+                            className="post-card"
+                            style={{ backgroundImage: `url(${creator.imageUrl})` }}
+                        >
+
+                            <div className="post-actions">
+                                <button onClick={() => handleEdit(creator.id)}>✏️</button>
+                                <button onClick={() => handleDetailedView(creator.id)}>ⓘ</button>
+                                <button onClick={() => deleteCreator(creator.id)}>✕</button>
+                            </div>
+
+                            <div className="post-icon">
+                                <IconCamera size={40} color="#667eea" />
+                            </div>
+
+                            <h3 className="post-name">{creator.name}</h3>
+
+                            <p className="post-detail">
+                                <strong>Url:</strong> {creator.url}
+                            </p>
                             
-                                ✏️
-                            </button>
-                            <button onClick={() => deleteCreator(creator.id)}>
+                            <p className="post-detail">
+                                <strong>Description:</strong> {creator.description}
+                            </p>
 
-                                ✕
-                            </button>
+                            <p className="post-detail">
+                                <strong>Image Url:</strong> {creator.imageUrl}
+                            </p>
                         </div>
-
-                        <div className="post-icon">
-                            <IconCamera size={40} color="#667eea" />
-                        </div>
-                        <h3 className="post-name">{creator.name}</h3>
-                        <p className="post-detail">
-                            <strong style={{ color: '#667eea' }}>Url:</strong> {creator.url}
-                        </p>
-                        <p className="post-detail">
-                            <strong style={{ color: '#667eea' }}>Description:</strong> {creator.description}
-                        </p>
-                        <p className="post-detail">
-                            <strong style={{ color: '#667eea' }}>Image Url:</strong> {creator.imageUrl}
-                        </p>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
+
         </div>
     );
 }

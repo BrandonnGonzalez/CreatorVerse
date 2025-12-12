@@ -1,3 +1,14 @@
+/* 🌌 Full-page gradient background */
+.creators-background {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Existing styles */
 .read-posts-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -28,21 +39,17 @@
     border-radius: 16px;
     padding: 2rem;
 
-    /* Make the image visible */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    /* Darken image so text pops */
     background-blend-mode: overlay;
     background-color: rgba(22, 33, 62, 0.75);
 
-    /* Glow effect */
     box-shadow: 0 8px 16px rgba(102, 126, 234, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
 }
-
 
 .post-card:hover {
     transform: translateY(-5px);
@@ -103,6 +110,7 @@
     color: #cbd5e1;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
+    overflow-wrap: anywhere;
 }
 
 .post-detail strong {
@@ -144,7 +152,4 @@
 
 .like-text {
     color: #cbd5e1;
-}
-.post-detail {
-    overflow-wrap: anywhere;
 }
