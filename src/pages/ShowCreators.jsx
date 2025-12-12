@@ -69,17 +69,14 @@ function ShowCreators() {
 
                             <h3 className="post-name">{creator.name}</h3>
 
-                            <p className="post-detail">
-                                <strong>Url:</strong> {creator.url}
-                            </p>
+                            <a className="post-detail" href={creator.url}>
+                                <strong>Youtube:</strong> {creator.url}
+                            </a>
                             
                             <p className="post-detail">
                                 <strong>Description:</strong> {creator.description}
                             </p>
 
-                            <p className="post-detail">
-                                <strong>Image Url:</strong> {creator.imageUrl}
-                            </p>
                         </div>
                     ))}
                 </div>
