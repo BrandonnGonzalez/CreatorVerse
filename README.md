@@ -44,6 +44,8 @@ Recoridng created with 👉🏿 Loom
 ## Notes
 
 Describe any challenges encountered while building the app or any additional context you'd like to add.
+</br>
+**N/A**
 
 ## License
 
