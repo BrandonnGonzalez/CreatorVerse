@@ -32,8 +32,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='https://www.loom.com/share/a4468aba1f144794bad641eeaa66a4b2' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-  <a href="https://www.loom.com/share/a4468aba1f144794bad641eeaa66a4b2">Prework Recording</a>
+👉🏿 <a href="https://www.loom.com/share/a4468aba1f144794bad641eeaa66a4b2">Prework Recording</a>
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  👉🏿 Loom
